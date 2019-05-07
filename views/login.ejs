@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+      doLogin=function(){
+          var user = {};
+          user.username=$("#username").val();
+          user.password=$("#password").val();
+          $.ajax({
+          type: "POST",
+          url: "/api/authenticate",
+          data: user,
+          success: function(result){
+            console.log("data is "+result);
+            if(result == "success"){
+              location="/dashboard";
+              //alert("data");
+            }else{
+              alert("Username or password is not correct.");
+            }
+          }
+        });
+      }
+    </script> 
+    <h1><%= title %></h1>
+    <input id='username' type="text" name="" placeholder="username"><br/><br/>
+    <input id='password' type="password" name="" placeholder="password"><br/><br/>
+    <input type="button" name="" onclick="doLogin()" value="Login"><br/><br/>
+  </body>
+</html>

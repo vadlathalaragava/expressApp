@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  	<script>
+  	 onDashboard = function(){
+  	 	location='dashboard';
+  	 };
+  	 onCustomers = function(){
+  	 	location='customers';
+  	 };
+  	 onAboutus = function(){
+  	 	location='aboutus';
+  	 };
+  	 onLogout = function(){
+  	 	location='login';
+  	 }		
+
+  	</script>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <button onclick="onDashboard()">Dashboard</button> | 
+    <button onclick="onCustomers()">Customers</button> | 
+    <button onclick="onAboutus()">Aboutus</button> | 
+    <button onclick="onLogout()">Logout</button>
+    <hr/>
+  </body>
+</html>
